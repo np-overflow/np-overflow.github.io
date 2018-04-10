@@ -79,6 +79,7 @@ body {
     font-weight: lighter;
     src: url("../fonts/Sailec-Light.otf") format("opentype");
 }
+body, html { overflow-x: hidden !important; }
 body {
     user-select: none;
     background-color: whitesmoke; 
@@ -94,7 +95,7 @@ img {
     padding: 0px 20px;
 }
 
-.navbar-section > a > img {
+.social-handle {
     height: 20px;
 }
 
