@@ -151,45 +151,44 @@ var __makeRelativeRequire = function(require, mappings, pref) {
   }
 };
 require.register("initialize.js", function(exports, require, module) {
-"use strict";
+'use strict';
 
-var _typed = require("typed.js");
+var _typed = require('typed.js');
 
 var _typed2 = _interopRequireDefault(_typed);
 
-var _papaparse = require("papaparse");
+var _papaparse = require('papaparse');
 
 var _papaparse2 = _interopRequireDefault(_papaparse);
 
-var _handlebars = require("handlebars");
+var _handlebars = require('handlebars');
 
 var _handlebars2 = _interopRequireDefault(_handlebars);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-require("handlebars");
-require("handlebars/runtime");
+require('handlebars');
+require('handlebars/runtime');
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // do your setup here
-  console.log("Initialized app");
+  console.log('Initialized app');
 
   var options = {
     strings: ["Welcome to NP's Hack Club", "Welcome to Uniql", "Welcome to Overflow"],
     startDelay: 1000,
     showCursor: true,
-    cursorChar: "_",
+    cursorChar: '_',
     autoInsertCss: true,
     smartBackspace: true,
     backSpeed: 80,
     backDelay: 50,
-    typeSpeed: 100,
-    loop: true
+    typeSpeed: 100
   };
 
   var typed = new _typed2.default(".element", options);
 
-  var template = _handlebars2.default.compile(document.getElementById("avatar-template").innerHTML);
+  var template = _handlebars2.default.compile(document.getElementById('avatar-template').innerHTML);
 
   _papaparse2.default.parse("/members.csv", {
     download: true,
@@ -200,39 +199,14 @@ document.addEventListener("DOMContentLoaded", function () {
           name: data[0],
           initial: data[0].split(" ").length > 1 ? data[0].split(" ")[0][0].toUpperCase() + data[0].split(" ")[1][0].toUpperCase() : data[0][0].toUpperCase()
         });
-      }).join("");
-      document.getElementById("members").innerHTML = foo;
+      }).join('');
+      document.getElementById('members').innerHTML = foo;
     }
   });
-
-  setInterval(function () {
-    //time to scroll to bottom
-    $("html, body").animate({ scrollTop: $(document).height() }, 20000);
-
-    //scroll to top
-    setTimeout(function () {
-      $("html, body").animate({ scrollTop: 0 }, 5000);
-    }, 2000);
-  }, 2000);
 });
 });
 
-require.register("scroll.js", function(exports, require, module) {
-"use strict";
-
-setInterval(function () {
-
-    //time to scroll to bottom
-    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
-
-    //scroll to top
-    setTimeout(function () {
-        $('html, body').animate({ scrollTop: 0 }, 8000);
-    }, 2000); //call every 2000 miliseconds
-}, 2000); //call every 2000 miliseconds
-});
-
-;require.alias("path-browserify/index.js", "path");
+require.alias("path-browserify/index.js", "path");
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
